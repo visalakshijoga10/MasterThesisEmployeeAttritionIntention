@@ -69,7 +69,7 @@ The performance of machine learning classification models trained on the basis o
 - **Random Seed:** 42 for reproducibility
 - **Class Balancing:** Balanced class weights applied
 - **Feature Scaling:** Applied for Logistic Regression and SVM
-- **Interpretability:** SHAP TreeExplainer applied to Random Forest model
+- **Interpretability:** SHAP TreeExplainer applied to CatBoost model
 
 ---
 
@@ -126,21 +126,21 @@ The performance of machine learning classification models trained on the basis o
 ---
 
 ## SHAP Analysis
-SHAP TreeExplainer was applied to the Random Forest model.
+SHAP TreeExplainer was applied to the CatBoost model - the best performing model.
 
 ### Top 10 Features by SHAP Importance
 | Rank | Feature | SHAP Importance | Direction |
 |---|---|---|---|
-| 1 | Environment Satisfaction | 0.1435 | Low → Intention to Leave |
-| 2 | Age | 0.0986 | Young → Intention to Leave |
-| 3 | Job Satisfaction | 0.0904 | Low → Intention to Leave |
-| 4 | Total Work Experience | 0.0704 | Less → Intention to Leave |
-| 5 | Work Life Balance | 0.0636 | Low → Intention to Leave |
-| 6 | Training Programs Last Year | 0.0432 | Fewer → Intention to Leave |
-| 7 | Years at Company | 0.0410 | Shorter → Intention to Leave |
-| 8 | Daily Work Travel | 0.0388 | Mixed |
-| 9 | Job Involvement | 0.0386 | Low → Intention to Leave |
-| 10 | Percent Salary Hike | 0.0374 | Low → Intention to Leave |
+| 1 | Environment Satisfaction | 0.8638 | Low → Intention to Leave |
+| 2 | Job Satisfaction | 0.6588 | Low → Intention to Leave |
+| 3 | Age | 0.4241 | Young → Intention to Leave |
+| 4 | Job Level | 0.4165 | Low → Intention to Leave |
+| 5 | Work Life Balance | 0.3282 | Low → Intention to Leave |
+| 6 | Daily Work Travel | 0.2978 | Mixed |
+| 7 | Distance From Home | 0.2876 | High → Intention to Leave |
+| 8 | Percent Salary Hike | 0.2450 | Low → Intention to Leave |
+| 9 | Training Programs Last Year | 0.2386 | Fewer → Intention to Leave |
+| 10 | Job Role | 0.2075 | Mixed |
 
 ---
 
@@ -157,8 +157,13 @@ SHAP TreeExplainer was applied to the Random Forest model.
 ## Repository Contents
 ```
 ├── README.md
+├── Employee_Attrition_Intention_Survey_Responses.csv
 ├── Employee_Attrition_Intention_Thesis_Experiment.ipynb
-└── Employee_Attrition_Intention_Survey_Responses.csv
+└── Notebooks/
+    ├── 01_Data_Cleaning_and_Preprocessing.ipynb
+    ├── 02_Exploratory_Data_Analysis.ipynb
+    ├── 03_Model_Training_and_Comparison.ipynb
+    └── 04_SHAP_Interpretability_Analysis.ipynb
 ```
 
 ---
